@@ -114,3 +114,91 @@ Do not supply a request body with this method.
 ##### error
 ```
 ```
+
+### Update Article
+
+#### HTTP Request
+```
+[PATCH] {baseUrl}/article/{articleId}
+```
+#### Request body
+| Name | Value |
+|:-----|:------|
+| title | string
+| author_id | int |
+| content | string |
+
+#### Sample Response
+
+##### success 
+```
+{
+    "id": 1,
+    "title": "Test one",
+    "author": "John",
+    "summary": "Test content",
+    "url": "/article/1",
+    "createdAt": "2017-07-31"
+}
+```
+##### error
+```
+```
+
+### View Article
+
+#### HTTP Request
+```
+[GET] {baseUrl}/article/{articleId}
+```
+#### Request body
+Do not supply a request body with this method.
+
+#### Sample Response
+
+##### success 
+```
+{
+    "id": 1,
+    "title": "Title Updated",
+    "author": "John",
+    "summary": "Sample content updated",
+    "url": "/article/1",
+    "createdAt": "2017-07-31"
+}
+```
+##### error
+```
+{
+    "title": [
+        "The title field is required."
+    ],
+    "author_id": [
+        "The author id field is required."
+    ],
+    "content": [
+        "The content field is required."
+    ]
+}
+```
+
+### DELETE Article
+
+#### HTTP Request
+```
+[DELETE] {baseUrl}/article/{articleId}
+```
+#### Request body
+Do not supply a request body with this method.
+
+#### Sample Response
+
+##### success 
+```
+{
+    "status": "success"
+}
+```
+##### error
+```
+```
