@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Author;
+use App\Transformers\AuthorTransformer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -20,7 +21,12 @@ class AuthorController extends Controller
         } else {
             $author = Author::create($request->only('name'));
 
-            return response($author);
+            return response(
+                fractal()
+                    ->item($author)
+                    ->transformWith(new AuthorTransformer())
+                    ->toArray()['data']
+            );
         }
     }
 
