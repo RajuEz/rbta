@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('author_id');
             $table->string('title');
-            $table->string('url')->unique();
+            $table->string('url')->unique()->nullable()->default(null);
             $table->text('content');
             $table->timestamps();
 

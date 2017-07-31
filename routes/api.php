@@ -21,3 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 $router->group(['prefix' => 'author'], function ($router) {
     $router->post('/', 'AuthorController@create');
 });
+
+//Article
+$router->group(['prefix' => 'article'], function ($router) {
+    $router->get('/', 'ArticleController@index');
+    $router->post('/', 'ArticleController@create');
+});
