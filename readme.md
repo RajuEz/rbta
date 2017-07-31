@@ -1,7 +1,7 @@
 
 # RBTA
 
-Test Laravel REST api application with modules of Author & Articles
+Test Laravel REST api application with modules of Author & Article
 
 
 ## Requirements
