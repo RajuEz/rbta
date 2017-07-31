@@ -26,4 +26,10 @@ $router->group(['prefix' => 'author'], function ($router) {
 $router->group(['prefix' => 'article'], function ($router) {
     $router->get('/', 'ArticleController@index');
     $router->post('/', 'ArticleController@create');
+
+    $router->group(['prefix' => '{article}'], function ($router) {
+        $router->get('/', 'ArticleController@show');
+        $router->patch('/', 'ArticleController@update');
+        $router->delete('/', 'ArticleController@delete');
+    });
 });
