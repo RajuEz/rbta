@@ -4,7 +4,7 @@
 Test Laravel REST api application with modules of Author & Articles
 
 
-##Requirements
+## Requirements
 * PHP 5.6.10 or higher
 * Nginx or Apache
 * Composer
@@ -33,6 +33,6 @@ DB_PASSWORD=
 php artisan migrate
 ```
 
-##Documentation
+## Documentation
 
 Please read [APIDocumentation.md](https://github.com/RajuEz/rbta/blob/master/APIDocumentation.md) for API documentation.
